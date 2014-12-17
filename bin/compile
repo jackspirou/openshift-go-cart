@@ -63,7 +63,7 @@ PATH=$GOROOT/bin:$PATH
 if ! (which hg >/dev/null 2>&1 && which bzr >/dev/null 2>&1)
 then
     echo -n "       Installing Virtualenv..."
-    virtualenv --python $python --distribute --never-download --prompt='(venv) ' $venv 2>&1 > /dev/null 
+    virtualenv --python $python --distribute --never-download --prompt='(venv) ' $venv 2>&1 > /dev/null
     . $venv/bin/activate 2>&1 > /dev/null
     echo " done"
 
@@ -82,9 +82,9 @@ mkdir -p $p
 cp -a $build/* $p
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
-echo "-----> Running: go get -tags openshift ./..."
+echo "-----> Skipping Running: go get -tags openshift ./..."
 cd $p
-go get -tags openshift ./...
+# go get -tags openshift ./...
 
 mkdir -p $build/bin
 mv $GOPATH/bin/* $build/bin

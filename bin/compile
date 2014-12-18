@@ -83,7 +83,7 @@ cp -a $build/* $p
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 # echo "-----> Running: go get -tags openshift ./..."
-echo "-----> Running: go build -tags openshift ./..."
+echo "-----> Running: go install -tags openshift ./..."
 cd $p
 # go get -tags openshift ./...
 go build -tags openshift ./...

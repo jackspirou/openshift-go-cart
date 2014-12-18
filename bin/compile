@@ -6,6 +6,8 @@
 
 set -eo pipefail
 
+yum install cyrus-sasl
+
 source "${OPENSHIFT_GO_DIR}/lib/util"
 
 mkdir -p "$1" "$2"
